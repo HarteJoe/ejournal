@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Article - Electronic Resources Security: A Look at Unauthorized Users</title>
+  <link href="../../../../journalstyle.css" rel="stylesheet" type="text/css"/>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+<div id="content-wrapper">
+  
+  <!--The banner at top with logo-->
+  <header id="masthead" role="banner">
+    <div id="logo">
+      <img src="../../../../journal-wide-graphics/jep_logo.png" alt="JEP logo"/>
+    </div>
+    <div id="pagetitle">
+      <h1>Journal of Electronic Publishing</h1>
+    </div>
+  </header>
+  
+  <!--The navigation bar at the top of each page-->
+  <nav role="navigation">
+    <ul id="menu">
+      <li class="menu-item"><a href="../../../../index.html" title="Go to the Home Page">Home</a></li>
+      <li class="menu-item"><a href="../dummy.html" title="Learn all about us">About</a></li>
+      <li class="menu-item"><a href="../../../../coverpage.html" title="View our published volumes">Volumes</a></li>
+      <li class="menu-item"><a href="../dummy.html" title="Find a specific article">Article Search</a></li>
+      <li class="menu-item"><a href="../dummy.html" title="Become a member of the JEP">Join</a></li>
+      <li class="menu-item"><a href="../dummy.html" title="Sign in to your account">Sign In</a></li>
+      <li class="menu-item"><a href="../dummy.html" title="Our contact details">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <!--Main body - the article-->
+  <article role="main">
+    <h1>Volume 10, Issue 1 (2013)</h1>
+    <h1 class="article-title">Electronic Resources Security: A Look at Unauthorized Users</h1>
+    <div class="author-keywords">
+      <h2 class="article-header">Author</h2>
+      <p>Heather Tones White is an Information Technology Librarian at the University of Saskatchewan in Saskatoon, Saskatchewan. She has been with the U of S since 2005 after completing her M.L.I.S. at the University of Western Ontario. Heather can be reached at</p>
+      <address>Email: <a href="mailto:heather.white@usask.ca">heather.white@usask.ca</a></address>
+      <h2 class="article-header">Keywords</h2>
+      <p>Security, Shibboleth, Electronic journals, Unauthorized users, Access</p>
+    </div>
+    <div class="abstract">
+      <h2 class="article-header">Abstract</h2>
+      <p>Much of the literature written on electronic resources security focuses on systematic downloading. However, when the unauthorized use from two cases of stolen identities at the University of Saskatchewan was studied in more depth, a different pattern emerged. By analyzing proxy server data, we found that the unauthorized use was coming from all over the world, was focused on science, technology and medical resources, and included both small-scale and excessive downloading. This article outlines some steps that libraries can take to detect and prevent small-scale unauthorized use and implications as libraries move towards Shibboleth authentication.</p>
+    </div>
+    <div class="for_margin"><!--Floated elements above are removed from flow so hr sits right against them. This div allows hr element to set a top margin-->
+    </div>
+    <hr/>
+    <!-- Lots of text from here on in, so spaces have been inserted for clarity-->
+    <div class="article-body">
+      
+      <h2 class="article-header">Introduction</h2>
+      <p class="main-text">Quietly and regularly, international electronic journal thieves are downloading your electronic resources with stolen logins and passwords. Sound far-fetched? Not really. In late 2008, the University of Saskatchewan was refused access to a major publisher because a user tried to download more than 150 articles in a session. When the incident was investigated, the library did not find an overzealous patron in need of a stern warning. Instead, the library found a stolen login ID and password that had been used undetected 15 other times that day from various international locations. While incidents like this one are not uncommon, the topic of electronic journal theft is not often considered by librarians and administrators. Additionally, the topic is not often delved into more deeply to determine the breadth of electronic journal misuse. So, how are electronic resources being misused? How do you stop it?</p>
+
+      <h2 class="article-header">Types of E-Resource Misuse</h2>
+      <p class="main-text">The license agreements for electronic resources typically limit access to authorized users, as defined in the agreement, and also often explicitly prohibit downloading in a systematic way. When either of these conditions is not met, the library is in violation of its legal contracts and can face serious consequences including partial or full revocation of access. Baker and Tenopir (<a href="#ref1">2006</a>) identify three examples of misuse:</p>
+      <ul>
+        <li>excessive downloading with a stolen login and password;</li>
+        <li>excessive downloading from an authorized user; and</li>
+        <li>downloading by an unauthorized person from an open proxy server that did not require authorization.</li>
+      </ul>
+      <p class="main-text">This case at the University of Saskatchewan appeared, at first, to be similar to Baker and Tenopir's second example. The first sign of a problem was the e-resource vendor revoking access to the library's proxy server (EZProxy), which allows remote access to resources....</p>
+
+      <h2 class="article-header">Who Are Our Unauthorized Users?</h2>
+      <p class="main-text">Once it was determined that there were many unauthorized users, questions arose about who they were and what they were doing. One could romantically envision these people as the Robin Hoods of the e-journal world, stealing from the information rich to give to the information poor. Or as thieves driven only by profit, repackaging and reselling resources. Perhaps they are simply genuine scholars and medical professionals looking for the access that they need. Are they Open Access vigilantes, taking access into their own hands? While we cannot tell their motives from the log files, this case study does shed some light on the question of identity and download behavior in the areas of location, subject matter and quantity.</p>
+
+      <p class="main-text">First, I created a database and imported the EZProxy audit files and log files into separate tables. I was able to join the audit data, which contains user IDs, and the log data, which contains download information, by joining the two tables on the session field. I then limited the data to only the compromised IDs. From this data I could identify IP addresses, download URLs and download sizes. Another table was created with location information for each IP gathered from <a href="http://ip-lookup.net/">http://ip-lookup.net/</a>. For privacy and storage reasons, we delete files after a set period of time. This meant that I could only obtain four days worth of data, in other words, only a snapshot in time.<p>
+
+      <h2 class="article-header">Location</h2>
+      <p class="main-text">During those four days, the two stolen IDs were accessed from a total of 17 different countries from all over the world (Figure 1). Some of the IP addresses could not be identified, but most could be traced to a suspected country of origin. It is possible that some of the IPs were intermediate hosts or proxies, and the user actually resides elsewhere, but that is not possible to detect from the data available. Interesting to note is the wide variety of countries from many continents.</p>
+      
+      <figure>
+        <img src="images/figure1.png" alt="Number of IP addresses by country"/>
+        <figcaption>Figure 1.Number of IP Addresses by Country.</figcaption>
+      </figure>
+      
+      <p class="main-text">Host information was also looked up and investigated further with Google searching. Hosts fell into seven categories (Figure 2). The biggest category was legitimate commercial and/or residential Internet Service Providers (ISPs). The second biggest category was unknown. If the host of an IP is unknown, this may indicate that it is not reputable, but not necessarily. Perhaps the most interesting finding, is that some use was coming from known university or healthcare organization IP ranges.</p>
+     
+      <figure>
+        <img src="images/figure2.png" alt="Pie chart of IP address types"/>
+        <figcaption>Figure 2.Organization or ISP Types of IP Addresses.</figcaption>
+      </figure>
+
+      <h2 class="article-header">Subject Matter</h2>
+      <p class="main-text">Although one could investigate the subject matter of each article downloaded, for the sake of speed and simplicity, I instead looked at the domain names and determined the vendors or publishers. Not surprisingly, the majority of the visited domains were vendors that specialize in science, technology, medicine (STM) or have strong STM collections within their large multidisciplinary holdings. The complete list of vendors/publishers accessed is in <a href="../dummy.html">Appendix A</a>.<p>
+
+      <h2 class="article-header">Quantity</h2>
+      <p class="main-text">There is no question that some excessive use was occurring that was likely systematic downloading. After all, that was the behavior that triggered this investigation. However, if you look at all the sessions over that four day period, there are only a few spikes in download quantity, with many sessions showing moderate quantities. Please note that the bytes represented in Figure 3 are total bytes downloaded in the session including not just articles, but also information like search results and webpage components.</p>
+      
+      <figure>
+        <img src="images/figure3.png" alt="Graph of data downloaded per session"/>
+        <figcaption>Figure 3.Download Quantity for Each Session.</figcaption>
+      </figure>
+
+      <h2 class="article-header">Limitations</h2>
+      <p class="main-text">This data is only from two IDs over a short period of time and cannot be extrapolated to represent the nature of all unauthorized use. This case study is not meant to prove that there exists any particular percentages, rather it attempts to shed light on the fact that these types of unauthorized use do exist. For example, not all unauthorized use is coming from China. Not all unauthorized use is excessive downloading or spidering activity. Unauthorized use from hospitals and universities does exist.<p>
+
+      <h2 class="article-header">Future of Access and Unauthorized Use</h2>
+      <p class="main-text">The move from IP and proxy based authentication towards Shibboleth authentication has begun and is growing in popularity. There is a hope that Shibboleth may reduce the workload of libraries in maintaining proxy configurations and submitting IP ranges. At the same time, it protects patron privacy by continuing to authenticate users at their home institution and is based on trust in the local authentication. <a href="#note1">[1]</a> A stolen password will appear to be legitimate and will be authenticated against the local organization in the same way it is now. Shibboleth will not protect against stolen passwords any more than our current system does. The difference is that when a vendor detects excessive use, they will only need to deny access to that single user, rather than blocking an entire proxy server and effectively blocking all remote access. Limited unauthorized use may go undetected unless the vendors themselves look for multiple locations or other markers of suspicious activity. With Shibboleth, libraries will often rely on their parent organizations to be the local authentication (identity provider). If libraries want to learn more about who is accessing resources, they will need to communicate with the identity provider and/or their vendors (service providers), rather than simply look at their own proxy server activity.</p>
+      
+      <p class="main-text">In the print-based world, security and access were not so diametrically opposed....<p>
+
+      <h2 class="article-header">Conclusion</h2>
+      <p class="main-text">Many resources, such as time, hardware, and software are spent on protecting our electronic resources and, indeed, this is the agreement that we have made with many of our content providers and we must uphold our end of the bargain. But when we see some of the people that we are keeping out, they start to look an awful lot like the people we are usually trying to serve. It is not a coincidence that some of the resources being accessed by the unauthorized users are among the most prohibitively expensive in the world. We can't let the unauthorized users in now, but we can promote and support Open Access policies, negotiate for more consistent interlibrary loan rights in our licenses and continue to be vocal about excessive pricing. If libraries do realize efficiencies in moving to Shibboleth, perhaps this time and energy needs to be spent on opening up access. Out of sight, but not out of mind.</p>
+      <hr/>
+    </div><!--article-body-->
+
+    <footer class="article-footer">
+      <h3>Footnotes</h3>
+      <ol>
+        <li id="note1">Shibboleth [Internet]. [copyright 2010]. Internet2; [cited 2010 10/13]. Available from: <a href="http://shibboleth.internet2.edu/">http://shibboleth.internet2.edu/</a></li>
+      </ol>
+      <h3>References</h3>
+      <ol>
+        <!--No web link available for this reference-->
+        <li id="ref1">Baker G and Tenopir C. 2006. Managing the unmanageable: Systematic downloading of electronic resources by library users. Journal of Library Administration 44(3/4):11-24.</li>
+      </ol>
+    </footer>
+  </article>
+  <div id="push"><!--Stops footer overlapping content--></div>
+</div><!--END "content-wrapper"-->
+
+<!--Footer that appears on bottom of each page-->
+<div id="footer-wrapper">
+  <footer class="page-footer" role="contentinfo">
+    <ul>
+      <li><a href="../dummy.html" class="footer-link">&copy; Copyright Information</a></li>
+      <li><a href="#masthead" class="footer-link">Back to Top</a></li>
+    </ul>
+  </footer>
+</div>
+</body>
+</html>
+
+
+

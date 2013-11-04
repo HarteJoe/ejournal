@@ -1,0 +1,248 @@
+/* This document is the journal-wide stylesheet */
+
+html {
+	height: 100%; /*Ensure page takes up full viewport if small content eg. coverpage*/
+	overflow-y: scroll; /*Scroll bar always visible.Stops pages shifting when it appears*/
+}
+
+body {
+	height: 100%; /*Ensure body is full size of <html> so content takes up full page,eg.coverpage*/
+	background-image: url('journal-wide-graphics/page_bg.png');
+	margin: 0;  /*Reset any default*/
+	padding: 0; /*Reset any default*/
+} 
+
+/*---Using Google Web Fonts---*/
+@font-face {
+	font-family: "Droid Sans";
+	src: url('http://themes.googleusercontent.com/font?kit=s-BiyweUPV0v-yRb-cjciC3USBnSvpkopQaUR-2r7iU') format('truetype');
+}
+
+/*---The page banner at the top---*/
+header {
+	width: auto;
+	padding-top: 2px;
+	margin-left: 8px;;
+	margin-right: 8px;
+	margin-bottom: 20px;
+	height: 100px;
+	padding-left: 70px;
+	background: #dbe7ff url('journal-wide-graphics/navbar_bg.png') repeat-x bottom;
+	border: 4px ridge #ffffff;
+	border-radius: 3px; /*Rounds off the corners*/
+}
+
+#logo { 
+	float: left;
+	margin-right: 90px;
+	padding-top: 12px;
+}
+
+#pagetitle {
+	white-space: nowrap; /*Title will all be on single line always*/
+	position: relative;
+	bottom: 15px;
+	font-family: "Arial Black";
+    color: #ffffff;
+	font-size: 120%;
+	text-shadow: 0px 1px #999, 0px 2px #888, 0px 3px #777, 0px 4px #666, 0px 5px #555, 0px 6px #444, 0px 7px #333, 0px 8px 7px #001135; /*8 seperate shadows*/
+}
+
+/*---The navigation bar---*/
+nav {
+	position: relative;
+	border: 1px solid #dee3e7;
+	border-radius: 2px;
+	height: 30px;
+	margin: 0px auto;
+	width: 1150px;
+	margin-bottom: 40px;
+    background: #ffffff url('journal-wide-graphics/navbar_bg.png') repeat-x bottom left; /* Image is transparent, so must use white bg */
+    font-family: "Droid Sans", Helvetica;
+}	
+
+nav ul {
+	list-style: none;
+	margin: 0; /*Reset default values*/
+	padding: 0; 
+}
+
+nav li {
+	float: left;
+	border-right: 1px solid #dee3e7;
+}
+
+nav a {
+	padding: 5px 20px 2px 20px;
+	line-height: 30px;
+	color: #555555;
+	border-bottom: 4px solid #cacaca;
+}
+
+nav a:hover {
+	background-color: #e6e6e6;
+	background-image: url('journal-wide-graphics/navbar_bg.png');
+	background-repeat: repeat-x;
+	background-position: bottom left;
+}
+
+/*---The home page welcome text and image--*/
+#welcome {
+	text-align: left;
+	clear: both;
+	padding-left: 200px;
+	padding-right: 200px;
+	font-family: "Droid Sans", Helvetica;
+}
+
+#welcome img {
+	float: right;
+	margin: 3px;
+	border: 1px solid #dee3e7;
+}
+
+#quote {
+	font-family: Times;
+	font-style: italic;
+}
+
+#quote p {
+	font-family: "Droid Sans";
+	font-size: 80%;
+	font-weight: bold;
+}
+
+/*---The main text of an article---*/
+article {
+	margin-top: 70px;
+	margin-left: 100px;
+	margin-right: 100px;
+	font-family: "Droid Sans", Helvetica;
+}
+
+.article-title {
+	margin-bottom: 35px;
+	text-align: center;
+	font-family: "Droid Sans", Helvetica;
+	color: #ffffff;
+	font-size: 20pt;
+	border: 1px solid black;
+	border-radius: 2px;
+	padding: 4px;
+	background-color: #555;
+}
+
+.abstract {
+	width: 45%;
+	float: left;
+	font-size: 85%;
+}
+
+.author-keywords {
+	width: 45%;
+	float: right;
+	font-size: 85%;
+}
+
+.article-body {
+	clear: both; /*Sits underneath floated Abstract and Author/Keywords sections*/
+}
+
+.main-text {
+	margin-bottom: 40px;
+	margin-top: 40px;
+	font-family: "Droid Sans", Helvetica;
+	text-align: center;
+}
+
+.article-header {
+	color: #555;
+}
+
+/*---This div allows <hr> under article abstract etc. to set a top margin as floated elements are removed from normal document flow---*/
+div.for_margin { 
+	clear: both;
+} 
+
+hr {
+	clear: both;
+	box-shadow: 0px 0px 10px 1px black;
+	margin-bottom: 50px;
+	margin-top: 50px;
+	color: #7997a7;
+}
+
+article ul {
+	font-style: italic;
+	line-height: 200%;
+}
+
+figure {
+	margin-bottom: 40px;
+	margin-top: 40px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 80%;
+	font-family: Helvetica;
+}
+
+figure img {
+	width: 50%;
+	height: 50%;
+	border: 1px solid black;
+}
+
+a:link {
+	text-decoration: none; /*Hyperlinks won't be underlined*/
+}
+
+/*---Footnotes and references---*/
+footer.article-footer {
+	margin-bottom: 65px;
+}
+
+footer.article-footer h3 {
+	font-family: "Droid Sans", Helvetica;
+}
+
+footer.article-footer ol {
+	font-family: Times;
+	line-height: 200%;
+}
+
+/*---Footer on bottom of page---*/
+footer.page-footer {
+	padding-top: 1px;
+	background-color: #555;
+	height: 100%;
+}
+
+footer.page-footer ul {
+	text-align: center;
+	list-style: none;
+}
+
+footer.page-footer li {
+	display: inline;
+	padding-right: 50px;
+}
+
+.footer-link {
+	font-family: "Droid Sans", Helvetica;
+	color: #ffffff;
+}
+
+/*---Make the footer stick to bottom---*/
+#content-wrapper {
+	min-height: 100%;
+	height: auto !important; /*For IE*/
+	height: 100%; /*For IE*/
+	margin: 0 auto -50px; /*Bottom margin is negative value of footer height*/
+}
+
+#footer-wrapper, #push {
+	height: 50px; 
+	overflow: hidden;
+}
+
+	
